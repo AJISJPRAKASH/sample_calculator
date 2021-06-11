@@ -15,9 +15,9 @@ def btnclr():
         txt_ip.set(opr)
 def btneql():
     global opr
-    csum = str(eval(opr))
-    opr=csum
-    txt_ip.set(csum)
+    clsum = str(eval(opr))
+    opr=clsum
+    txt_ip.set(clsum)
 
 window = Tk()
 window.title("Calculator")
