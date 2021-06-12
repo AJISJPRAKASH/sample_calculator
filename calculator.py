@@ -1,5 +1,6 @@
+#import python gui tkinter
 from tkinter import *
-
+#create a function to do action button click
 def btnclick(numbers):
     global opr
     if opr=="0":
@@ -8,25 +9,30 @@ def btnclick(numbers):
     else:
         opr = opr + str(numbers)
         txt_ip.set(opr)
-
+#create a function to do action clear button click
 def btnclr():
         global opr
         opr = "0"
         txt_ip.set(opr)
+
+
+# create a function to do execute  of equal button
 def btneql():
     global opr
     clsum = str(eval(opr))
     opr=clsum
     txt_ip.set(clsum)
-
+#create a new window to display
 window = Tk()
+#Give title name to window
 window.title("Calculator")
 opr=""
 txt_ip=StringVar()
+#create a empty entry to display our calculator output
 tst_display=Entry(window,textvariable= txt_ip, font=('calibre',20, 'bold'),bd=30,insertwidth=4,
 						bg="SlateBlue1",justify='right').grid(columnspan=4)
 
-
+#create all buttons
 i=18
 button1=Button(window,text="1",padx=i,bd=8,fg="black",font=('calibre',20, 'bold'),bg="SlateGray1",command=lambda:btnclick(1))
 button2=Button(window,text="2",padx=i,bd=8,fg="black",font=('calibre',20, 'bold'),bg="SlateGray1",command=lambda:btnclick(2))
@@ -46,7 +52,7 @@ clbtn=Button(window,text="C",padx=i,bd=8,fg="black",font=('calibre',20, 'bold'),
 eqlbtn=Button(window,text="=",padx=i,bd=8,fg="black",font=('calibre',20, 'bold'),bg="SlateGray1",command=lambda:btneql())
 
 
-
+#set the button positions
 
 button7.grid(row=2,column=0)
 button8.grid(row=2,column=1)
@@ -69,7 +75,7 @@ divbtn.grid(row=5,column=3)
 
 
 
-
+#run the tkinter event loops
 window.mainloop()
 
 
