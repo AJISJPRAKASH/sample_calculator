@@ -26,6 +26,8 @@ def btneql():
 window = Tk()
 #Give title name to window
 window.title("Calculator")
+#Set the window with no resizable
+window.resizable(height = 0, width = 0)
 opr=""
 txt_ip=StringVar()
 #create a empty entry to display our calculator output
